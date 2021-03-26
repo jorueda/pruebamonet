@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Detalle, Control
+from .models import Detalle, Control, Archivo
 
 class DetalleInLine(admin.TabularInline):
     model = Detalle
@@ -13,3 +13,4 @@ class ControlAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Control, ControlAdmin)
+admin.site.register(Archivo)

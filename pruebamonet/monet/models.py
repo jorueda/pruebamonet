@@ -32,3 +32,10 @@ class Detalle(models.Model):
     ciclo = models.CharField(max_length = 3, blank = True)
     reservado = models.CharField(max_length = 17)
     control = models.ForeignKey('monet.Control', on_delete = models.CASCADE, default = "")
+
+
+class Archivo(models.Model):
+    archivo_texto = models.FileField(default = "")
+
+    def __str__(self):
+        return self.archivo_texto
