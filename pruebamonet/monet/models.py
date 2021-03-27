@@ -15,6 +15,9 @@ class Control(models.Model):
     valor_total_transacciones = models.PositiveBigIntegerField(default = 0) # Longitud 17
     reservado = models.CharField(max_length = 79, default = "", blank = True)
 
+    def __str__(self):
+        return '%s %s' % (self.nit_entidad, self.fecha_transmision)
+
 
 class Detalle(models.Model):
     tipo_registro = models.PositiveSmallIntegerField() # Longitud 1
@@ -30,7 +33,7 @@ class Detalle(models.Model):
     fecha_vencimiento = models.PositiveIntegerField(blank = True) # Longitud 8
     periodos_facturados = models.CharField(max_length = 2, blank = True)
     ciclo = models.CharField(max_length = 3, blank = True)
-    reservado = models.CharField(max_length = 17)
+    reservado = models.CharField(max_length = 17, blank = True)
     control = models.ForeignKey('monet.Control', on_delete = models.CASCADE, default = "")
 
 
