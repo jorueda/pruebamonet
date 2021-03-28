@@ -38,7 +38,7 @@ class Detalle(models.Model):
 
 
 class Archivo(models.Model):
-    archivo_texto = models.FileField(default = "")
+    archivo_texto = models.FileField(upload_to = "archivos_texto", default = "")
 
     def __str__(self):
-        return self.archivo_texto
+        return '%s' % (self.archivo_texto)
